@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo: Equilíbrio Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>AgroFuturo 🌾</h1>
+            <p>Encontre o equilíbrio entre alta produção e preservação ambiental.</p>
+        </header>
+
+        <section class="status-panel">
+            <div class="status-card">
+                <h3>Produção</h3>
+                <p id="production-val">0 / 500</p>
+                <div class="progress-bar"><div id="prod-bar" class="fill prod"></div></div>
+            </div>
+            <div class="status-card">
+                <h3>Impacto Ambiental</h3>
+                <p id="env-val">0%</p>
+                <div class="progress-bar"><div id="env-bar" class="fill env"></div></div>
+            </div>
+            <div class="status-card">
+                <h3>Créditos ($)</h3>
+                <p id="money-val">100</p>
+            </div>
+        </section>
+
+        <main class="actions-panel">
+            <h2>Ações de Manejo</h2>
+            <div class="btn-grid">
+                <button onclick="investAgro('tradicional')" class="btn btn-danger">
+                    🚜 Agricultura Intensiva<br>
+                    <small>+50 Prod | +25% Impacto | Cost: $0</small>
+                </button>
+                <button onclick="investAgro('rotacao')" class="btn btn-success">
+                    🌱 Rotação de Culturas<br>
+                    <small>+20 Prod | +5% Impacto | Cost: $20</small>
+                </button>
+                <button onclick="investAgro('tecnologia')" class="btn btn-success">
+                    🛰️ Agro Tech (Precisão)<br>
+                    <small>+40 Prod | +2% Impacto | Cost: $50</small>
+                </button>
+                <button onclick="investAgro('recuperar')" class="btn btn-primary">
+                    🌳 Reflorestar / Recuperar<br>
+                    <small>0 Prod | -30% Impacto | Cost: $30</small>
+                </button>
+            </div>
+        </main>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">Fim de Jogo</h2>
+                <p id="modal-text"></p>
+                <button onclick="resetGame()" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
